@@ -137,7 +137,6 @@ public class Player extends ImageView{
     }
 
     public void setStartPos(){
-        //Log.d("Set player",color);
         switch(color){
             case "red":
                 xPos = xMin - size / 2;

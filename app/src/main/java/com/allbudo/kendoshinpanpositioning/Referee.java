@@ -58,14 +58,9 @@ abstract public class Referee extends ImageView{
         this.setBackgroundColor( Color.rgb( 20, 70, 200 ) );
     }
 
-    public void setPos( float[] pos ){
-        this.setX( pos[0] );
-        this.setY( pos[1] );
-    }
-
     public void setPos(float x, float y){
-        this.setX( x );
-        this.setY( y );
+        this.setX( x - size / 2 );
+        this.setY( y -size / 2);
     }
 
     public float[] getPos(){
