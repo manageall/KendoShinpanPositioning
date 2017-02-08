@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Kendo Shinpan Positioning</string>
+    <string name="start_button">Start excercise</string>
+    <string name="start_introduction">This application is used to illustrate how Kendo Shinpan should position themselves relative to the Shiai-sha.\n You control the Shiai-sha by simultaneously dragging them into any position in the Shiai-jo.\nThe Shinpan will adopt their positions based on a given set of rules.</string>
+</resources>
