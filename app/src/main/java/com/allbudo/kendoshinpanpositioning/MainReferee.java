@@ -10,6 +10,7 @@ import static java.lang.Math.sin;
 
 /**
  * Created by Nils on 2017-01-16.
+ *
  */
 
 public class MainReferee extends Referee{
