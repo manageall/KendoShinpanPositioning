@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+	android:width="24dp"
+	android:height="24dp"
+	android:viewportHeight="24.0"
+	android:viewportWidth="24.0">
+	<group android:name="background">
+		<path
+			android:name="circle"
+			android:fillColor="#000000"
+			android:strokeColor="#000000"
+			android:strokeAlpha="0"
+			android:strokeWidth="0"
+			android:pathData="
+				M 10,10
+				m -10,0
+				a 10,10 0,1 1,20 0
+				a 10,10 0,1 1,-20 0
+				" />
+		<path
+			android:name="letter"
+			android:fillColor="#000000"
+			android:strokeColor="#ffffff"
+			android:strokeAlpha="1"
+			android:fillAlpha="0"
+			android:strokeWidth="1"
+			android:pathData="
+				M 7,5
+				l 0,10
+				l 6,0
+				l 0,-3
+				l -3,0
+				l 0,-7
+				z
+
+				" />
+	</group>
+</vector>
