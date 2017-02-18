@@ -38,12 +38,14 @@ abstract public class Referee extends ImageView{
 
 
     protected void init(){
-        this.setImageResource(R.drawable.shinpan);
+        setImage();
         this.d = getDrawable();
     }
     /**
      * Following members manipulates size and position
      */
+
+    abstract public void setImage();
 
     abstract public void adjust();
 
@@ -59,8 +61,8 @@ abstract public class Referee extends ImageView{
     }
 
     public void setPos(float x, float y){
-        this.setX( x - size / 2 );
-        this.setY( y -size / 2);
+        this.setX( x);
+        this.setY( y);
     }
 
     public float[] getPos(){

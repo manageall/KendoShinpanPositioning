@@ -10,7 +10,7 @@ import java.util.Map;
 public class ShiaiJo extends AppCompatActivity {
     public static float assistantRefereeOffset = 200;
     public static float refereeDistanceFromPlayer = 300;
-    public static float refereeStartDistanceFromLine = 100;
+    public static float refereeStartDistanceFromLine = 200;
     public static View shiaijoView;
     public static Map<String, Float> shiaijo = new HashMap<String, Float>();
 
@@ -80,11 +80,12 @@ public class ShiaiJo extends AppCompatActivity {
 
         /*
         Set starting positions for cast
-         */
+        */
         playerRed.setStartPos();
         playerWhite.setStartPos();
         mainReferee.setStartPos();
         leftReferee.setStartPos();
         rightReferee.setStartPos();
+        playerInterval.update();
     }
 }

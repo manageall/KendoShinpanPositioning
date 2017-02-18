@@ -18,8 +18,8 @@ public class PlayerInterval {
     public  Player yMax;
     public  Player xMin;
     public  Player yMin;
-    private Player playerRed;
-    private Player playerWhite;
+    public Player playerRed;
+    public Player playerWhite;
     private MainReferee mainReferee;
     private LeftReferee leftReferee;
     private RightReferee rightReferee;

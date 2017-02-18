@@ -1,6 +1,7 @@
 package com.allbudo.kendoshinpanpositioning;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 
 import static com.allbudo.kendoshinpanpositioning.ShiaiJo.*;
@@ -39,5 +40,7 @@ public class MainReferee extends Referee{
         float newY = myCenter[1] + py;
         this.setPos(newX, newY);
     }
-
+    public void setImage(){
+        this.setImageResource(R.drawable.shinpan);
+    }
 }

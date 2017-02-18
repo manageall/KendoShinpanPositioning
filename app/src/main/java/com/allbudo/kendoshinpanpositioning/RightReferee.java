@@ -36,4 +36,7 @@ public class RightReferee extends Referee{
         float newY = p[1] + dy;
         this.setPos( newX, newY );
     }
+    public void setImage(){
+        this.setImageResource(R.drawable.rightshinpan);
+    }
 }
