@@ -13,6 +13,7 @@ public class ShiaiJo extends AppCompatActivity {
     public static float refereeStartDistanceFromLine = 200;
     public static View shiaijoView;
     public static Map<String, Float> shiaijo = new HashMap<String, Float>();
+    private boolean started = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +41,10 @@ public class ShiaiJo extends AppCompatActivity {
         shiaijo.put("xmax", shiaijo.get("xmin") + shiaijo.get("width"));
         shiaijo.put("ymax", shiaijo.get("ymin") + shiaijo.get("height"));
 
-        /*
-
-        */
+        //Prevent duplication;
+        if(started){
+            return;
+        }
 
         /*
         Instantiate cast
@@ -87,5 +89,7 @@ public class ShiaiJo extends AppCompatActivity {
         leftReferee.setStartPos();
         rightReferee.setStartPos();
         playerInterval.update();
+
+        started = true;
     }
 }
