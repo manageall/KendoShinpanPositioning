@@ -18,10 +18,10 @@
 				" />
 		<path
 			android:name="letter"
-			android:fillColor="#000000"
+			android:fillColor="#ffffff"
 			android:strokeColor="#ffffff"
 			android:strokeAlpha="1"
-			android:fillAlpha="0"
+			android:fillAlpha="1"
 			android:strokeWidth="1"
 			android:pathData="
 				M 7,5
