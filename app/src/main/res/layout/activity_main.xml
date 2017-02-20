@@ -36,5 +36,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/shinpanki"
-        android:onClick="startPresentation"/>/>
+        android:onClick="startPresentation"/>
 </RelativeLayout>

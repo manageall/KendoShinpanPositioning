@@ -15,12 +15,10 @@ import static java.lang.Math.cos;
  */
 
 abstract public class Referee extends ImageView{
-    private int size = 300;
+    private int size = 80;
     protected float xPos; // Curent X-position
     protected float yPos; // Current Y-position
     public PlayerInterval playerInterval;
-    private Drawable d;
-
 
     /**
      * Constructor
@@ -28,7 +26,7 @@ abstract public class Referee extends ImageView{
      */
     public Referee(Context context){
         super(context);
-        this.init();
+        init();
     }
 
     @Override
@@ -36,10 +34,9 @@ abstract public class Referee extends ImageView{
         return super.getDrawable();
     }
 
-
     protected void init(){
         setImage();
-        this.d = getDrawable();
+        setLook();
     }
     /**
      * Following members manipulates size and position
@@ -51,26 +48,18 @@ abstract public class Referee extends ImageView{
 
     abstract public void setStartPos();
 
-    private void setSize( int width, int height ){
-        this.setMaxWidth( width );
-        this.setMinimumWidth( width );
-        this.setMaxHeight( height );
-        this.setMinimumHeight( height );
-        this.setLayoutParams( new FrameLayout.LayoutParams( width, height ) );
-        this.setBackgroundColor( Color.rgb( 20, 70, 200 ) );
+    private void setLook(){
+        setAdjustViewBounds(true);
+        setPadding(0,0,0,0);
+        setLayoutParams( new FrameLayout.LayoutParams(size, size) );
+        getLayoutParams().height = size;
+        getLayoutParams().width = size;
+        setBackgroundColor( Color.argb(0, 20, 70, 200 ) );
     }
 
     public void setPos(float x, float y){
-        this.setX( x);
-        this.setY( y);
-    }
-
-    public float[] getPos(){
-        return new float[]{this.xPos, this.yPos};
-    }
-
-    public float[] getPosCentered(){
-        return new float[]{this.xPos + size / 2, this.yPos + size / 2};
+        setX( x);
+        setY( y);
     }
 
     public void setPlayerInterval(PlayerInterval p) {
