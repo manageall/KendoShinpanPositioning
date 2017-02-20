@@ -3,17 +3,12 @@ package com.allbudo.kendoshinpanpositioning;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-
-/**
- * Created by Nils on 2017-01-16.
- */
 
 public class Player extends ImageView{
     private int size = 80;
@@ -29,7 +24,6 @@ public class Player extends ImageView{
     private float xMax; // Boundary
     private float yMax; // Boundary
     private PlayerInterval playerInterval;
-    private Drawable d;
 
     @Override
     public Drawable getDrawable() {
@@ -56,8 +50,7 @@ public class Player extends ImageView{
                 this.setImageResource(R.drawable.white);
                 break;
         }
-        this.setSize(this.size, this.size);
-        this.d = getDrawable();
+        this.setLook();
     }
 
     @Override
@@ -74,20 +67,15 @@ public class Player extends ImageView{
                 dX = myEvent.getX() - touchDownX;
                 dY = myEvent.getY() - touchDownY;
 
-                // Try testing raw touch position for crash with the other player
-                // If crash the break
                 float interval = this.playerInterval.getLength();
-                //Log.d("Interval", Float.toString(interval));
 
                 if(interval < this.size){
                     if( (this.playerInterval.xMax == this && dX < 0) || (this.playerInterval.xMax != this && dX > 0) ){
                         //Do not allow x move
-                        //Log.d("X move","forbidden");
                         dX = 0;
                     }
                     if( (this.playerInterval.yMax == this && dY < 0) || (this.playerInterval.yMax != this && dY > 0)){
                         //Do not allow y move
-                        //Log.d("Y move","forbidden");
                         dY = 0;
                     }
                 } else {
@@ -129,6 +117,16 @@ public class Player extends ImageView{
         this.playerInterval = p;
     }
 
+    private int pixelsToDp(int pixels){
+        DisplayMetrics metrics = getContext().getResources().getDisplayMetrics();
+        float fpixels = metrics.density * pixels;
+        int dp = (int) (fpixels + 0.5f); // 0.5f rounds up to prevent 0;
+        return dp;
+    }
+
+    /**
+     * Limits player to move only within shiaijo
+     */
     public void setBounds(View v){
         xMin = v.getX();
         yMin = v.getY();
@@ -136,46 +134,42 @@ public class Player extends ImageView{
         xMax = xMin + v.getMeasuredWidth() - size;
     }
 
-    public void setStartPos(){
+    public void setStartPos(View v){
+        float x = v.getX();
+        float y = v.getY();
+        float w = v.getMeasuredWidth();
+        float h = v.getMeasuredHeight();
+        float cx = x + w/2;
+        float cy = y + h/2;
+
         switch(color){
             case "red":
-                xPos = xMin - size / 2;
-                yPos = yMin + ( yMax - yMin - size ) / 2;
+                xPos = cx - ( size / 2 ) - 200;
+                yPos = cy - (size / 2 );
                 break;
             case "white":
-                xPos = xMax - size / 2;
-                yPos = yMin + ( yMax - yMin - size ) / 2;
+                xPos = cx - ( size / 2 ) + 200;
+                yPos = cy - (size / 2 );
                 break;
             default:
-                xPos = (xMin + xMax) / 2;
-                yPos = (yMin + yMax) / 2;
+                //If something fails, pop them in the center
+                xPos = cx;
+                yPos =  cy;
         }
         setPos( xPos, yPos );
     }
 
-    private void setSize( int width, int height ){
-        this.setScaleType(ScaleType.CENTER);
-        this.setLayoutParams( new FrameLayout.LayoutParams( this.size, this.size) );
-        this.requestLayout();
-        this.getLayoutParams().height = this.size;
-        this.setBackgroundColor( Color.argb(10, 20, 70, 200 ) );
+    private void setLook(){
+        this.setAdjustViewBounds(true);
+        this.setPadding(0,0,0,0);
+        this.setLayoutParams( new FrameLayout.LayoutParams(size, size) );
+        this.getLayoutParams().height = size;
+        this.getLayoutParams().width = size;
+        this.setBackgroundColor( Color.argb(0, 20, 70, 200 ) );
     }
-
 
     public void setPos( float x, float y ){
-        //setXPos( x );
         this.setX( x );
-        //setYPos( y );
-        this.setY( y );
-    }
-
-    public void setXPos( float x ){
-        xPos = x;
-        this.setX( x );
-    }
-
-    public void setYPos( float y ){
-        yPos = y;
         this.setY( y );
     }
 

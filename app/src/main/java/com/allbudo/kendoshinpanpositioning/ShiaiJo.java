@@ -40,8 +40,10 @@ public class ShiaiJo extends AppCompatActivity {
         shiaijo.put("height",(float) shiaijoView.getMeasuredHeight());
         shiaijo.put("xmax", shiaijo.get("xmin") + shiaijo.get("width"));
         shiaijo.put("ymax", shiaijo.get("ymin") + shiaijo.get("height"));
+        shiaijo.put("cx", shiaijo.get("xmin") + shiaijo.get("width"));
+        shiaijo.put("cy", shiaijo.get("ymin") + shiaijo.get("height"));
 
-        //Prevent duplication;
+        //Prevent cast duplication;
         if(started){
             return;
         }
@@ -83,8 +85,8 @@ public class ShiaiJo extends AppCompatActivity {
         /*
         Set starting positions for cast
         */
-        playerRed.setStartPos();
-        playerWhite.setStartPos();
+        playerRed.setStartPos(shiaijoView);
+        playerWhite.setStartPos(shiaijoView);
         mainReferee.setStartPos();
         leftReferee.setStartPos();
         rightReferee.setStartPos();

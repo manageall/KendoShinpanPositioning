@@ -17,4 +17,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent (this, ShiaiJo.class);
         startActivity(intent);
     }
+
+    public void startPresentation(View view){
+        Intent intent = new Intent (this, ScrollingActivity.class);
+        startActivity(intent);
+    }
 }

@@ -37,6 +37,10 @@ public class PlayerInterval {
         rightReferee.adjust();
     }
 
+    /*
+     * Calculates length of the interval between the players
+     * Also identifies whom of the two is top left, bottom right etc
+     */
     private void calculateLength(){
         float dx = playerRed.getX() - playerWhite.getX();
         float dy = playerRed.getY() - playerWhite.getY();
@@ -97,14 +101,14 @@ public class PlayerInterval {
 
 
     public float getAngle(){
-        // Angle relative to horisontal
+        // Angle relative to horizon
         // default = 0
         // positive = high left to low right = clockwise turn
         // negative = high right to low left = counter clockwise turn
         // ABS max = 90
 
         float angle;
-        float height = xMax.getY() - xMin.getY(); // View corners not centers. Doesn't matter though
+        float height = xMax.getY() - xMin.getY();
         float width = xMax.getX() - xMin.getX();
 
         angle = (float) atan(height/width);
@@ -115,7 +119,7 @@ public class PlayerInterval {
     /**
      * @param i either pos or neg int != 0 defines which side of origo on the interval
      * @param l distance from origo on the interval
-     * @return
+     * @return point on the interval on l distance from center
      */
     public float[] getOffsetPoint(int i, float l){
         float[] p = new float[2]; //Array to be returned representing a point on the interval
