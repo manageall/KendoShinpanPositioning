@@ -6,8 +6,11 @@ import android.view.View;
 
 import static com.allbudo.kendoshinpanpositioning.ShiaiJo.*;
 import static java.lang.Math.PI;
+import static java.lang.Math.abs;
 import static java.lang.Math.cos;
+import static java.lang.Math.pow;
 import static java.lang.Math.sin;
+import static java.lang.Math.sqrt;
 
 /**
  * Created by Nils on 2017-01-16.
@@ -33,12 +36,26 @@ public class MainReferee extends Referee{
 
     public void adjust(){
         float[] myCenter = playerInterval.getCenter();
+        float[] mainPos = playerInterval.mainPosition.getPos();
+        float dx = abs(myCenter[0]-mainPos[0]);
+        float dy = abs(myCenter[1]-mainPos[1]);
+        double a = pow( (double) dx, 2 ) + pow( (double) dy, 2 );
+        float distanceToPos = (float)sqrt( a );
+        //Log.d("ref distance to pos", Float.toString(distanceToPos));
+        if(distanceToPos > 300 || true){
+            move(mainPos[0], mainPos[1]);
+        }else{
+            return;
+        }
+
         float myAngle = playerInterval.getAngle() + (float) PI/2; // Radians
         float py = -refereeDistanceFromPlayer * (float) sin( (double) myAngle);
         float px = -refereeDistanceFromPlayer * (float) cos( (double) myAngle);
         float newX = myCenter[0] + px;
         float newY = myCenter[1] + py;
         this.setPos(newX, newY);
+        Log.d("MainRef x", ""+newX);
+        Log.d("MainRef y", ""+newY);
     }
     public void setImage(){
         this.setImageResource(R.drawable.shinpan);

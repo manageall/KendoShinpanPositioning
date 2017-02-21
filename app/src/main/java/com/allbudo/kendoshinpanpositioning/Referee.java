@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -64,5 +65,12 @@ abstract public class Referee extends ImageView{
 
     public void setPlayerInterval(PlayerInterval p) {
         this.playerInterval = p;
+    }
+
+    protected void move(float toX, float toY){
+        setPos(toX, toY);
+       // TranslateAnimation ta = new TranslateAnimation( 0, toX , 0, toY );
+        //ta.setDuration(500);
+        //this.startAnimation(ta);
     }
 }

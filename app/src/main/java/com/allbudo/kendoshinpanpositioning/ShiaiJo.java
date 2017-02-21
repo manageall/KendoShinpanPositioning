@@ -54,6 +54,7 @@ public class ShiaiJo extends AppCompatActivity {
         Player playerRed   = new Player( this, "red" );
         Player playerWhite = new Player( this, "white" );
         MainReferee mainReferee     = new MainReferee( this ); // Referee
+        MainPosition mainPosition       = new MainPosition( this );
         LeftReferee leftReferee     = new LeftReferee( this ); // Referee
         RightReferee rightReferee   = new RightReferee( this ); // Referee
 
@@ -73,6 +74,7 @@ public class ShiaiJo extends AppCompatActivity {
         playerInterval.setPlayer(playerRed);
         playerInterval.setPlayer(playerWhite);
         playerInterval.setMainReferee(mainReferee);
+        playerInterval.setMainPosition(mainPosition);
         playerInterval.setLeftReferee(leftReferee);
         playerInterval.setRightReferee(rightReferee);
 

@@ -21,6 +21,7 @@ public class PlayerInterval {
     public Player playerRed;
     public Player playerWhite;
     private MainReferee mainReferee;
+    public MainPosition mainPosition;
     private LeftReferee leftReferee;
     private RightReferee rightReferee;
 
@@ -33,6 +34,7 @@ public class PlayerInterval {
     public void update(){
         calculateLength();
         mainReferee.adjust();
+        mainPosition.adjust();
         leftReferee.adjust();
         rightReferee.adjust();
     }
@@ -80,7 +82,10 @@ public class PlayerInterval {
         mainReferee = r;
         r.setPlayerInterval(this);
     }
-
+    public void setMainPosition(MainPosition p){
+        mainPosition = p;
+        mainPosition.setPlayerInterval(this);
+    }
     public void setLeftReferee(LeftReferee r){
         leftReferee = r;
         r.setPlayerInterval(this);
