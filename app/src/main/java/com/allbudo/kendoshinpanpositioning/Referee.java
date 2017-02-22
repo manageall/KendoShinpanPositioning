@@ -20,6 +20,7 @@ abstract public class Referee extends ImageView{
     protected float xPos; // Curent X-position
     protected float yPos; // Current Y-position
     public PlayerInterval playerInterval;
+    protected Position myPos;
 
     /**
      * Constructor
@@ -59,8 +60,8 @@ abstract public class Referee extends ImageView{
     }
 
     public void setPos(float x, float y){
-        setX( x);
-        setY( y);
+        setX( x );
+        setY( y );
     }
 
     public void setPos(float[] pos){

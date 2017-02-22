@@ -1,6 +1,5 @@
 package com.allbudo.kendoshinpanpositioning;
 
-import android.content.Context;
 import android.util.Log;
 
 import static com.allbudo.kendoshinpanpositioning.ShiaiJo.refereeDistanceFromPlayer;
@@ -12,13 +11,11 @@ import static java.lang.Math.sin;
 
 /**
  * Created by Nils on 2017-01-16.
- *
  */
 
 public class MainPosition extends Position{
 
-    public MainPosition(){
-    }
+    public MainPosition(){}
 
     public void setStartPos(){
         xPos = shiaijo.get("xmin") + shiaijo.get("width") / 2;
@@ -34,5 +31,12 @@ public class MainPosition extends Position{
         float newX = myCenter[0] + px;
         float newY = myCenter[1] + py;
         this.setPos(newX, newY);
+        this.log();
+    }
+
+    public void log(){
+        String s = "";
+        s += "x = " + xPos + ", y = " + yPos + "\n";
+        Log.d( this.getClass().toString(), s );
     }
 }

@@ -21,6 +21,10 @@ abstract public class Position{
         yPos = y;
     }
 
+    public void setPos( float[] pos ){
+        setPos (pos[0], pos[1]);
+    }
+
     public float[] getPos(){
         return new float[]{ xPos, yPos };
     }

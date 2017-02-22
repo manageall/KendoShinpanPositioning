@@ -90,6 +90,7 @@ public class ShiaiJo extends AppCompatActivity {
         playerRed.setStartPos(shiaijoView);
         playerWhite.setStartPos(shiaijoView);
         mainReferee.setStartPos();
+        mainPosition.setStartPos();
         leftReferee.setStartPos();
         rightReferee.setStartPos();
         playerInterval.update();

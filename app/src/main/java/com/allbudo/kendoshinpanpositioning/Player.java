@@ -169,8 +169,8 @@ public class Player extends ImageView{
     }
 
     public void setPos( float x, float y ){
-        this.setX( x );
-        this.setY( y );
+        this.setX( x - size / 2);
+        this.setY( y - size / 2);
     }
 
     public float[] getPos(){

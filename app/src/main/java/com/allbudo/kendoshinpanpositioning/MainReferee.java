@@ -2,15 +2,9 @@ package com.allbudo.kendoshinpanpositioning;
 
 import android.content.Context;
 import android.util.Log;
-import android.view.View;
 
 import static com.allbudo.kendoshinpanpositioning.ShiaiJo.*;
-import static java.lang.Math.PI;
-import static java.lang.Math.abs;
-import static java.lang.Math.cos;
-import static java.lang.Math.pow;
-import static java.lang.Math.sin;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
 
 /**
  * Created by Nils on 2017-01-16.
@@ -18,7 +12,6 @@ import static java.lang.Math.sqrt;
  */
 
 public class MainReferee extends Referee{
-
     /**
      * Constructor
      * @param context required by super
@@ -54,10 +47,15 @@ public class MainReferee extends Referee{
         float newX = myCenter[0] + px;
         float newY = myCenter[1] + py;
         this.setPos(newX, newY);
-        Log.d("MainRef x", ""+newX);
-        Log.d("MainRef y", ""+newY);
+        // Log.d("MainRef x", ""+newX);
+        // Log.d("MainRef y", ""+newY);
     }
     public void setImage(){
         this.setImageResource(R.drawable.shinpan);
+    }
+
+    public void setPlayerInterval(PlayerInterval p){
+        super.setPlayerInterval(p);
+        this.myPos = playerInterval.mainPosition;
     }
 }

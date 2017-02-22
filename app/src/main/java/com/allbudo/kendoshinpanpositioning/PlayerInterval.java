@@ -18,10 +18,10 @@ public class PlayerInterval {
     public  Player yMax;
     public  Player xMin;
     public  Player yMin;
-    public Player playerRed;
-    public Player playerWhite;
+    public  Player playerRed;
+    public  Player playerWhite;
     private MainReferee mainReferee;
-    public MainPosition mainPosition;
+    public  MainPosition mainPosition;
     private LeftReferee leftReferee;
     private RightReferee rightReferee;
 
@@ -116,7 +116,7 @@ public class PlayerInterval {
         float height = xMax.getY() - xMin.getY();
         float width = xMax.getX() - xMin.getX();
 
-        angle = (float) atan(height/width);
+        angle = (float) atan( height / width );
 
         return angle;
     }
