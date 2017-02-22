@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Kendo Shinpan Positioning</string>
-    <string name="start_button">Start excercise</string>
+    <string name="start_button">Start exercise</string>
     <string name="start_introduction">This application is used to illustrate how Kendo Shinpan should position themselves relative to the Shiai-sha.\n You control the Shiai-sha by simultaneously dragging them into any position in the Shiai-jo.\nThe Shinpan will adopt their positions based on a given set of rules.</string>
     <string name="presentation1">
         Min idé var att på ett friktionsfritt sätt kunna illustrera hur domare vid en kendomatch skall positionera sig relativt de två tävlande. Formspråket fick inte på något sätt hindra funktionliteten; den skulle erbjuda så litet friktion som möjligt.\n
@@ -9,7 +9,7 @@
         Projektets omfattning\n
         Målet var att fram grundläggande funktionalitet avseende form och GUI för en Nexus 5 eller enheter med samma formfaktor.\n\n
 
-        En utmaning var att få de assiterande domarna att bete sig på rätt sätt. Det löste jag till slut genom att ge PlayerInterval en metod som returnerade en punkt på en linje mellan de två tävlnde på x avstånd från samma linjes centrum.\n
+        En utmaning var att få de assisterande domarna att bete sig på rätt sätt. Det löste jag till slut genom att ge PlayerInterval en metod som returnerade en punkt på en linje mellan de två tävlnde på x avstånd från samma linjes centrum.\n
         Sin vinkel i förhållande till horisontalplanet fanns redan tillgänglig och med dessa två värden hjälp kunde jag sedan trigonomisera fram positionerna för de assisterande domarna. Detta var den enskilda utmaning som tog mest tid.\n\n
 
         Applikationen består av endast 2 activities samt 6 övriga klasser.\n
