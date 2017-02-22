@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shiai_jo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/floor"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.allbudo.kendoshinpanpositioning.ShiaiJo">
+
+    <ImageView
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:src="@drawable/shiaijo"
+        android:id="@+id/shiaijo_id"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

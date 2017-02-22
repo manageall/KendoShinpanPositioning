@@ -63,6 +63,11 @@ abstract public class Referee extends ImageView{
         setY( y);
     }
 
+    public void setPos(float[] pos){
+        setX( pos[0] );
+        setY( pos[1] );
+    }
+
     public void setPlayerInterval(PlayerInterval p) {
         this.playerInterval = p;
     }
